@@ -47,11 +47,10 @@ for i in range(0,len(codes)):
     #print("here")
     Description = ""
     # Iterate over code
-    print(codes[i])
+    #print(codes[i])
     first_run = True
     for j in codes[i]:
-        print(j)
-        print(dict[j])
+        #print(j)
         if not first_run:
             Description =  Description + ", " + dict[j]
         else:
