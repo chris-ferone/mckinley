@@ -1,7 +1,7 @@
 # Reading an excel file using Python
 import pandas as pd
 import math
-df = pd.read_excel(r'C:\Users\Chris\Downloads\UnitTypev32.xlsx', header=5, sheet_name='AC', usecols="A,AC:AD", nrows=100)
+df = pd.read_excel(r'C:\Repos\mckinley\Unit Type v3.2.xlsx', header=5, sheet_name='AC', usecols="A,AC:AD", nrows=100)
 #print("start")
 #print(df)
 #print("end")
@@ -42,14 +42,14 @@ print(dict)
 # codes = ['GF', 'PFT']
 #
 # Iterate over list of codes
-for i in range(0,len(codes)):
-    code_len = len(codes[i])
+for i in range(0,len(clean_codes)):
+    code_len = len(clean_codes[i])
     #print("here")
     Description = ""
     # Iterate over code
     #print(codes[i])
     first_run = True
-    for j in codes[i]:
+    for j in clean_codes[i]:
         #print(j)
         if not first_run:
             Description =  Description + ", " + dict[j]
