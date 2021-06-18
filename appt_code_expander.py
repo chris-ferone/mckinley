@@ -1,31 +1,22 @@
 # Reading an excel file using Python
 import pandas as pd
 import math
-df = pd.read_excel(r'C:\Repos\mckinley\Unit Type v3.2.xlsx', header=5, sheet_name='AC', usecols="A,AC:AD", nrows=100)
-#print("start")
-#print(df)
-#print("end")
-#print(df.iloc[9:54, 1:3])
-#print(pd.Series(df.iloc[9:19, 2],index=df.iloc[9:19, 3]).to_dict())
-#print(xcl_dict)
-#AC16
-#dict =
-#print("column names")
-#print(df.columns.values)
-#['Type' 'Unnamed: 28' 'Count.1']
-#print(df['Unnamed: 28'])
 
+# Read in data from Excel Spreadsheet. Start at row 5(zero-indexed), Only Read in column A, AC, and AD. Don't read more than the first 100 rows.
+df = pd.read_excel(r'C:\Repos\mckinley\Unit Type v3.2.xlsx', header=5, sheet_name='AC', usecols="A,AC:AD", nrows=100)
+
+# Extract the appartment codes from column into a list
 codes = df.iloc[:, 0].tolist()
+
+# Remove the "nan" codes from the list
 clean_codes=[]
 for i in codes:
     if str(i) == 'nan':
         break
     else:
         clean_codes.append(i)
-#print(codes)
-#print("codes")
-#print(clean_codes)
-#print("")
+
+# Create a dictionary of key-value pairs from columns AC and AD
 dict_keys = df.iloc[9:54, 1].tolist()
 dict_values = df.iloc[9:54, 2].tolist()
 dict={}
@@ -35,19 +26,12 @@ for i in range(len(dict_keys)):
     else:
         dict[dict_keys[i]] = dict_values[i]
 #print("Dictionary")
-#print(dict)
-# dict = {'G': '1st Floor', 'T': 'Top', 'F': 'Furnished','P': 'Pool View'}
-# #print(dict)
-#
-# codes = ['GF', 'PFT']
-#
-# Iterate over list of codes
+
+# Iterate over list of codes, generate string from each code using dictionary
 for i in range(0,len(clean_codes)):
     code_len = len(clean_codes[i])
-    #print("here")
     Description = ""
     # Iterate over code
-    #print(codes[i])
     first_run = True
     for j in clean_codes[i]:
         #print(j)
