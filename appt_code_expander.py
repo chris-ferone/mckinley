@@ -30,7 +30,6 @@ for i in range(len(dict_keys)):
 
 # Iterate over list of codes, generate string from each code using dictionary
 for i in range(0,len(clean_codes)):
-    code_len = len(clean_codes[i])
     Description = ""
     # Iterate over code
     first_run = True
