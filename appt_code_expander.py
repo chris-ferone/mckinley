@@ -23,9 +23,9 @@ for i in codes:
     else:
         clean_codes.append(i)
 #print(codes)
-print("codes")
-print(clean_codes)
-print("")
+#print("codes")
+#print(clean_codes)
+#print("")
 dict_keys = df.iloc[9:54, 1].tolist()
 dict_values = df.iloc[9:54, 2].tolist()
 dict={}
@@ -34,8 +34,8 @@ for i in range(len(dict_keys)):
         break
     else:
         dict[dict_keys[i]] = dict_values[i]
-print("Dictionary")
-print(dict)
+#print("Dictionary")
+#print(dict)
 # dict = {'G': '1st Floor', 'T': 'Top', 'F': 'Furnished','P': 'Pool View'}
 # #print(dict)
 #
