@@ -2,13 +2,14 @@
 import pandas as pd
 import math
 
-# Read in data from Excel Spreadsheet. Start at row 5(zero-indexed), Only Read in column A, AC, and AD. Don't read more than the first 100 rows.
+# Read in data from Excel Spreadsheet. Starting at row 5(zero-indexed), read in
+# the next 100 rows, but only read in column A, AC, and AD.
 df = pd.read_excel(r'C:\Repos\mckinley\Unit Type v3.2.xlsx', header=5, sheet_name='AC', usecols="A,AC:AD", nrows=100)
 
-# Extract the appartment codes from column into a list
+# Extract the appartment codes from column A into a list
 codes = df.iloc[:, 0].tolist()
 
-# Remove the "nan" codes from the list
+# Remove the "nan" codes from the apartment codes list
 clean_codes=[]
 for i in codes:
     if str(i) == 'nan':
@@ -34,7 +35,6 @@ for i in range(0,len(clean_codes)):
     # Iterate over code
     first_run = True
     for j in clean_codes[i]:
-        #print(j)
         if not first_run:
             Description =  Description + ", " + dict[j]
         else:
