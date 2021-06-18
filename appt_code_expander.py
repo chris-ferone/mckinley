@@ -31,12 +31,8 @@ for i in range(len(dict_keys)):
 # Iterate over list of codes, generate string from each code using dictionary
 for i in range(0,len(clean_codes)):
     Description = ""
-    # Iterate over code
-    first_run = True
+    # Iterate through each individual letter/number of a single apartment code
     for j in clean_codes[i]:
-        if not first_run:
-            Description =  Description + ", " + dict[j]
-        else:
-            first_run = False
+        Description =  Description + ", " + dict[j]
     Description = Description[2:]
     print(Description)
